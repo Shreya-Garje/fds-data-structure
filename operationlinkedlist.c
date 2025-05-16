@@ -1,19 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 struct Node {
     int data;
     struct Node* next;
 };
-
 int main() {
     struct Node* head = NULL, *newNode, *temp;
     int choice, value;
-
     do {
         printf("\n1. Insert at Beginning\n2. Insert at End\n3. Delete from Beginning\n4. Delete from End\n5. Display List\n6. Exit\nChoice: ");
         scanf("%d", &choice);
-
         switch (choice) {
             case 1: { 
                 printf("Enter value: ");
@@ -29,7 +25,6 @@ int main() {
                 head = newNode;}
                 break;
             }
-
             case 2: { 
                 printf("Enter value: ");
                 scanf("%d", &value);
@@ -51,7 +46,6 @@ int main() {
                 }
                 break;
             }
-
             case 3: { 
                 if (head == NULL) {
                     printf("List is empty.\n");
@@ -63,7 +57,6 @@ int main() {
                 }
                 break;
             }
-
             case 4: { 
                 if (head == NULL) {
                     printf("List is empty.\n");
@@ -82,7 +75,6 @@ int main() {
                 }
                 break;
             }
-
             case 5: {
                 int i = 1;
                 temp = head;
@@ -98,7 +90,6 @@ int main() {
                 }
                 break;
             }
-
             case 6: {
                 printf("Exiting.\n");
                 while (head != NULL) {
@@ -108,12 +99,9 @@ int main() {
                 }
                 break;
             }
-
             default:
                 printf("Invalid choice.\n");
         }
-
     } while (choice != 6);
-
     return 0;
 }
