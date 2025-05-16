@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+int main() {
+    struct Node *head = NULL, *temp = NULL, *newNode = NULL;
+    int n, i, value;
+
+    printf("Enter the number of nodes: ");
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++) {
+        newNode = malloc(sizeof(struct Node));
+        printf("Enter data for node %d: ", i);
+        scanf("%d", &value);
+        newNode->data = value;
+        newNode->next = NULL;
+
+        if (head == NULL) {
+            head = newNode;  
+        } else {
+            temp->next = newNode;
+        }
+        temp = newNode;
+    }
+
+    printf("\nAddress stored in head (first node): %p\n\n", head);
+
+    printf("Linked List:\n");
+    temp = head;
+    i = 1;
+    while (temp != NULL) {
+        printf("Node %d: Data = %d, Address = %p, Next = %p\n",
+               i, temp->data, temp, temp->next);
+        temp = temp->next;
+        i++;
+    }
+
+    return 0;
+}
